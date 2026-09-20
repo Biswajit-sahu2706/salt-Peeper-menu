@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Salt & Pepper Restaurant — Menu</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --maroon:#7a0d10;
+  --maroon-dark:#4d0709;
+  --gold:#d4af37;
+  --gold-light:#f3e3ab;
+  --cream:#fff8ee;
+  --ink:#2a1210;
+  --muted:#8a6d5a;
+  --card:#ffffff;
+
+  color-scheme: light;
+
+  box-sizing:border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-padding-top:calc(140px + env(safe-area-inset-top,0px));
+}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+
+  background-image:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(122,13,16,0.06),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(212,175,55,0.10),
+      transparent 35%
+    );
+}
+
+/* ================= HEADER ================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--maroon),
+      var(--maroon-dark)
+    );
+
+  padding:
+    calc(18px + env(safe-area-inset-top,0px))
+    18px
+    14px;
+
+  color:white;
+
+  box-shadow:
+    0 6px 20px rgba(0,0,0,0.18);
+}
+
+/* ================= BRAND ================= */
+
+.brand{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:4px;
+}
+
+.brand h1{
+  font-family:'Playfair Display',serif;
+  font-size:1.7rem;
+  margin:0;
+  letter-spacing:0.5px;
+}
+
+.brand .amp{
+  color:var(--gold-light);
+}
+
+.brand p{
+  margin:0;
+  font-size:0.75rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold-light);
+  opacity:0.9;
+}
+
+/* ================= SEARCH ================= */
+
+.searchwrap{
+  margin-top:14px;
+}
+
+.searchwrap input{
+  width:100%;
+
+  padding:11px 16px;
+
+  border-radius:999px;
+  border:none;
+  outline:none;
+
+  font-family:'Poppins',sans-serif;
+  font-size:0.95rem;
+
+  background:rgba(255,255,255,0.94);
+  color:var(--ink);
+}
+
+/* ================= CATEGORY TABS ================= */
+
+nav.tabs{
+  display:flex;
+  gap:8px;
+
+  overflow-x:auto;
+
+  padding:12px 14px 0;
+
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+
+nav.tabs::-webkit-scrollbar{
+  display:none;
+}
+
+nav.tabs button{
+  flex:0 0 auto;
+
+  border:1px solid rgba(212,175,55,0.5);
+
+  background:rgba(255,255,255,0.06);
+
+  color:var(--gold-light);
+
+  padding:7px 14px;
+
+  border-radius:999px;
+
+  font-family:'Poppins',sans-serif;
+  font-size:0.78rem;
+  font-weight:600;
+
+  letter-spacing:0.3px;
+
+  white-space:nowrap;
+
+  cursor:pointer;
+}
+
+nav.tabs button.active{
+  background:var(--gold);
+  color:var(--maroon-dark);
+  border-color:var(--gold);
+}
+
+/* ================= MAIN ================= */
+
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:18px 14px 60px;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+  margin-bottom:26px;
+  scroll-margin-top:150px;
+}
+
+.section h2{
+  font-family:'Playfair Display',serif;
+
+  color:var(--maroon);
+
+  font-size:1.25rem;
+
+  border-bottom:2px solid var(--gold);
+
+  padding-bottom:6px;
+
+  margin:0 0 10px;
+
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+}
+
+.section h2 small{
+  font-family:'Poppins',sans-serif;
+
+  font-size:0.65rem;
+
+  color:var(--muted);
+
+  font-weight:500;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+}
+
+/* ================= SUBHEAD ================= */
+
+.subhead{
+  font-weight:600;
+
+  color:var(--maroon-dark);
+
+  font-size:0.85rem;
+
+  margin:14px 0 6px;
+
+  text-transform:uppercase;
+
+  letter-spacing:0.5px;
+
+  opacity:0.85;
+}
+
+/* ================= MENU ITEM ================= */
+
+.item{
+  display:flex;
+
+  justify-content:space-between;
+  align-items:center;
+
+  gap:10px;
+
+  background:var(--card);
+
+  border-radius:12px;
+
+  padding:11px 14px;
+
+  margin-bottom:8px;
+
+  box-shadow:
+    0 1px 3px rgba(122,13,16,0.06);
+
+  border:
+    1px solid rgba(122,13,16,0.06);
+}
+
+.item .name{
+  font-size:0.92rem;
+
+  font-weight:500;
+
+  color:var(--ink);
+}
+
+/* ================= VEG / NON VEG DOT ================= */
+
+.item .name .veg-dot,
+.item .name .nonveg-dot{
+  display:inline-block;
+
+  width:9px;
+  height:9px;
+
+  border-radius:2px;
+
+  margin-right:7px;
+
+  border:1.3px solid;
+}
+
+.veg-dot{
+  border-color:#1e7d32;
+  background:#2fa845;
+}
+
+.nonveg-dot{
+  border-color:#a3271f;
+  background:#c8382e;
+}
+
+/* ================= PRICE ================= */
+
+.item .price{
+  font-weight:700;
+
+  color:var(--maroon);
+
+  font-size:0.92rem;
+
+  white-space:nowrap;
+}
+
+/* ================= HIDDEN ================= */
+
+.hidden{
+  display:none !important;
+}
+
+.empty-msg{
+  text-align:center;
+
+  color:var(--muted);
+
+  padding:40px 10px;
+
+  font-size:0.95rem;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  text-align:center;
+
+  padding:26px 16px 40px;
+
+  color:var(--muted);
+
+  font-size:0.78rem;
+}
+
+footer .divider{
+  width:60px;
+  height:2px;
+
+  background:var(--gold);
+
+  margin:0 auto 14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <div class="brand">
+
+    <h1>
+      Salt <span class="amp">&</span> Pepper
+    </h1>
+
+    <p>
+      Restaurant · Digital Menu
+    </p>
+
+  </div>
+
+  <div class="searchwrap">
+
+    <input
+      id="search"
+      type="text"
+      placeholder="Search a dish… e.g. paneer, biryani, mojito"
+      oninput="filterItems()"
+    >
+
+  </div>
+
+  <nav class="tabs" id="tabs"></nav>
+
+</header>
+
+
+<!-- ================= MAIN MENU ================= -->
+
+<main id="main"></main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="divider"></div>
+
+  Prices in ₹ · Taxes as applicable · Menu subject to change
+  <br>
+
+  Show this dish to staff, or tell them the name, to place your order.
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* =====================================================
+   RESTAURANT MENU DATA
+===================================================== */
+
+const MENU = [
+
+  /* ================= VEG STARTERS ================= */
+
+  {
+    cat:"Veg Starters & Soups",
+
+    items:[
+
+      {
+        n:"Veg Hot n Sour (Soup, Evening only)",
+        p:"100",
+        v:1
+      },
+
+      {
+        n:"Veg Manchow (Soup, Evening only)",
+        p:"100",
+        v:1
+      },
+
+      {
+        n:"Veg Lemon Coriander (Soup, Evening only)",
+        p:"100",
+        v:1
+      },
+
+      {
+        n:"Non Veg Hot n Sour (Soup, Evening only)",
+        p:"120",
+        v:0
+      },
+
+      {
+        n:"Non Veg Manchow (Soup, Evening only)",
+        p:"120",
+        v:0
+      },
+
+      {
+        n:"NV Lemon Coriander (Soup, Evening only)",
+        p:"120",
+        v:0
+      },
+
+      {
+        n:"Paneer Salt & Pepper (Full/Half)",
+        p:"180/120",
+        v:1
+      },
+
+      {
+        n:"Paneer 65 (Full/Half)",
+        p:"170/120",
+        v:1
+      },
+
+      {
+        n:"Paneer 99 (Full/Half)",
+        p:"180/120",
+        v:1
+      },
+
+      {
+        n:"Paneer Manchurian (Full/Half)",
+        p:"170/120",
+        v:1
+      },
+
+      {
+        n:"Paneer Chilli (Full/Half)",
+        p:"170/120",
+        v:1
+      },
+
+      {
+        n:"Garlic Paneer",
+        p:"180",
+        v:1
+      },
+
+      {
+        n:"Schezwan Paneer",
+        p:"180",
+        v:1
+      },
+
+      {
+        n:"Mushroom Salt & Pepper (Full/Half)",
+        p:"180/120",
+        v:1
+      },
+
+      {
+        n:"Chilli Mushroom (Full/Half)",
+        p:"170/120",
+        v:1
+      },
+
+      {
+        n:"Mushroom 99 (Full/Half)",
+        p:"180/120",
+        v:1
+      },
+
+      {
+        n:"Mushroom Manchurian (Full/Half)",
+        p:"170/120",
+        v:1
+      },
+
+      {
+        n:"Mushroom 65 (Full/Half)",
+        p:"170/120",
+        v:1
+      },
+
+      {
+        n:"Chilli Baby Corn",
+        p:"170",
+        v:1
+      },
+
+      {
+        n:"Baby Corn 99",
+        p:"180",
+        v:1
+      },
+
+      {
+        n:"Corn Chat",
+        p:"100",
+        v:1
+      },
+
+      {
+        n:"Veg Manchurian (Full/Half)",
+        p:"160/120",
+        v:1
+      },
+
+      {
+        n:"Chilli Manchurian Dry",
+        p:"160",
+        v:1
+      }
+
+    ]
+  },
+
+
+  /* ================= SNACKS ================= */
+
+  {
+    cat:"Snacks",
+
+    items:[
+
+      {
+        n:"French Fries Classic",
+        p:"120",
+        v:1
+      },
+
+      {
+        n:"Peri Peri Fries",
+        p:"140",
+        v:1
+      },
+
+      {
+        n:"Masala Fries",
+        p:"120",
+        v:1
+      }
+
+    ]
+  },
+
+
+  /* ================= NON VEG STARTERS ================= */
+
+  {
+    cat:"Non-Veg Starters",
+
+    items:[
+
+      {
+        n:"Fish Salt & Pepper",
+        p:"260",
+        v:0
+      },
+
+      {
+        n:"Fish 99",
+        p:"260",
+        v:0
+      },
+
+      {
+        n:"Fish Manchurian",
+        p:"260",
+        v:0
+      },
+
+      {
+        n:"Chilli Fish",
+        p:"260",
+        v:0
+      },
+
+      {
+        n:"Prawn Salt & Pepper",
+        p:"280",
+        v:0
+      },
+
+      {
+        n:"Prawn 99",
+        p:"280",
+        v:0
+      },
+
+      {
+        n:"Prawn Chilli",
+        p:"280",
+        v:0
+      },
+
+      {
+        n:"Garlic Prawn",
+        p:"280",
+        v:0
+      },
+
+      {
+        n:"Butter Garlic Prawn",
+        p:"300",
+        v:0
+      },
+
+      {
+        n:"Prawn 65",
+        p:"280",
+        v:0
+      },
+
+      {
+        n:"Boiled Egg (1pc)",
+        p:"15",
+        v:0
+      },
+
+      {
+        n:"Egg Chilli",
+        p:"160",
+        v:0
+      },
+
+      {
+        n:"Egg 65",
+        p:"160",
+        v:0
+      },
+
+      {
+        n:"Egg Pepper Fry",
+        p:"160",
+        v:0
+      },
+
+      {
+        n:"Chicken Salt & Pepper (Half/Full)",
+        p:"120/170",
+        v:0
+      },
+
+      {
+        n:"Chicken 65 (Half/Full)",
+        p:"120/170",
+        v:0
+      },
+
+      {
+        n:"Chicken 99 (Half/Full)",
+        p:"120/180",
+        v:0
+      },
+
+      {
+        n:"Chicken Chilli (Half/Full)",
+        p:"120/170",
+        v:0
+      },
+
+      {
+        n:"Chicken Manchurian (Half/Full)",
+        p:"120/170",
+        v:0
+      },
+
+      {
+        n:"Pudina Chicken",
+        p:"190",
+        v:0
+      },
+
+      {
+        n:"Garlic Chicken (Half/Full)",
+        p:"120/170",
+        v:0
+      },
+
+      {
+        n:"Chicken Lollipop (4pc)",
+        p:"180",
+        v:0
+      },
+
+      {
+        n:"Drums of Heaven (6pc)",
+        p:"240",
+        v:0
+      },
+
+      {
+        n:"Dragon Chicken",
+        p:"200",
+        v:0
+      },
+
+      {
+        n:"Schezwan Chicken (Half/Full)",
+        p:"120/180",
+        v:0
+      },
+
+      {
+        n:"— Boneless: add ₹20 extra —",
+        p:"",
+        v:0
+      }
+
+    ]
+  },
+
+
+  /* ================= VEG MAIN COURSE ================= */
+
+  {
+    cat:"Veg Main Course",
+
+    items:[
+
+      {
+        n:"Paneer Butter Masala (Full/Half)",
+        p:"240/170",
+        v:1
+      },
+
+      {
+        n:"Paneer Hyderabadi (Full/Half)",
+        p:"200/150",
+        v:1
+      },
+
+      {
+        n:"Paneer Do Pyaza (Full/Half)",
+        p:"200/150",
+        v:1
+      },
+
+      {
+        n:"Paneer Kadai (Full/Half)",
+        p:"200/150",
+        v:1
+      },
+
+      {
+        n:"Paneer Masala (Full/Half)",
+        p:"200/150",
+        v:1
+      },
+
+      {
+        n:"Sahi Paneer",
+        p:"250",
+        v:1
+      },
+
+      {
+        n:"Paneer Bhurji",
+        p:"200",
+        v:1
+      },
+
+      {
+        n:"Paneer Bhartha",
+        p:"220",
+        v:1
+      },
+
+      {
+        n:"Mutter Paneer (Full/Half)",
+        p:"200/150",
+        v:1
+      },
+
+      {
+        n:"Paneer Kholapuri",
+        p:"230",
+        v:1
+      },
+
+      {
+        n:"Veg Kholapuri",
+        p:"200",
+        v:1
+      },
+
+      {
+        n:"Mix Veg",
+        p:"160",
+        v:1
+      },
+
+      {
+        n:"Veg Kadai",
+        p:"180",
+        v:1
+      },
+
+      {
+        n:"Veg Hyderabadi",
+        p:"190",
+        v:1
+      },
+
+      {
+        n:"Mushroom Butter Masala (Full/Half)",
+        p:"240/160",
+        v:1
+      },
+
+      {
+        n:"Mushroom Do Pyaza (Full/Half)",
+        p:"200/150",
+        v:1
+      },
+
+      {
+        n:"Mushroom Kadai (Full/Half)",
+        p:"200/150",
+        v:1
+      },
+
+      {
+        n:"Mushroom Hyderabadi (Full/Half)",
+        p:"200/150",
+        v:1
+      },
+
+      {
+        n:"Mushroom Kholapuri",
+        p:"220",
+        v:1
+      },
+
+      {
+        n:"Mushroom Mutter Masala (Full/Half)",
+        p:"200/150",
+        v:1
+      },
+
+      {
+        n:"Aloo Mutter",
+        p:"160",
+        v:1
+      },
+
+      {
+        n:"Chana Masala",
+        p:"120/180",
+        v:1
+      },
+
+      {
+        n:"Dry Chole",
+        p:"200",
+        v:1
+      }
+
+    ]
+  },
+
+
+  /* ================= NON VEG MAIN COURSE ================= */
+
+  {
+    cat:"Non-Veg Main Course",
+
+    items:[
+
+      {
+        n:"Chicken Butter Masala (Half/Full)",
+        p:"200/290",
+        v:0
+      },
+
+      {
+        n:"Chicken Kadai (Half/Full)",
+        p:"160/240",
+        v:0
+      },
+
+      {
+        n:"Chicken Hyderabadi (Half/Full)",
+        p:"160/250",
+        v:0
+      },
+
+      {
+        n:"Chicken Do Pyaza (Half/Full)",
+        p:"160/240",
+        v:0
+      },
+
+      {
+        n:"Chicken Kasa (Half/Full)",
+        p:"160/240",
+        v:0
+      },
+
+      {
+        n:"Chicken Patiala (Half/Full)",
+        p:"180/260",
+        v:0
+      },
+
+      {
+        n:"Chicken Mughlai (Half/Full)",
+        p:"200/290",
+        v:0
+      },
+
+      {
+        n:"Chicken Kholapuri (Half/Full)",
+        p:"170/260",
+        v:0
+      },
+
+      {
+        n:"Chicken Fry",
+        p:"260",
+        v:0
+      },
+
+      {
+        n:"Chicken Curry (Half/Full)",
+        p:"160/240",
+        v:0
+      },
+
+      {
+        n:"Chicken Masala (Half/Full)",
+        p:"160/240",
+        v:0
+      },
+
+      {
+        n:"Chicken Andhra Masala (5pc)",
+        p:"180",
+        v:0
+      },
+
+      {
+        n:"Chicken Pepper Fry (4pc)",
+        p:"180",
+        v:0
+      },
+
+      {
+        n:"Mutton Kasa (Half/Full)",
+        p:"360/250",
+        v:0
+      },
+
+      {
+        n:"Mutton Masala (Half/Full)",
+        p:"360/250",
+        v:0
+      },
+
+      {
+        n:"Mutton Hyderabadi (Half/Full)",
+        p:"360/250",
+        v:0
+      },
+
+      {
+        n:"Mutton Mughlai (Half/Full)",
+        p:"400/280",
+        v:0
+      },
+
+      {
+        n:"Mutton Dry Fry",
+        p:"500",
+        v:0
+      },
+
+      {
+        n:"Fish Masala",
+        p:"160",
+        v:0
+      },
+
+      {
+        n:"Fish Kalia",
+        p:"160",
+        v:0
+      },
+
+      {
+        n:"Fish Do Pyaza",
+        p:"160",
+        v:0
+      },
+
+      {
+        n:"Fish Hyderabadi",
+        p:"160",
+        v:0
+      },
+
+      {
+        n:"Fish Masala Fry",
+        p:"160",
+        v:0
+      },
+
+      {
+        n:"Prawn Masala",
+        p:"300",
+        v:0
+      },
+
+      {
+        n:"Prawn Kasa",
+        p:"300",
+        v:0
+      },
+
+      {
+        n:"Prawn Hyderabadi",
+        p:"300",
+        v:0
+      },
+
+      {
+        n:"Prawn Fry (Masala)",
+        p:"300",
+        v:0
+      },
+
+      {
+        n:"Prawn Dry Fry",
+        p:"450",
+        v:0
+      },
+
+      {
+        n:"Egg Masala",
+        p:"120",
+        v:0
+      },
+
+      {
+        n:"Egg Do Pyaza",
+        p:"140",
+        v:0
+      },
+
+      {
+        n:"Egg Hyderabadi",
+        p:"140",
+        v:0
+      },
+
+      {
+        n:"Egg Bhuj Curry",
+        p:"130",
+        v:0
+      },
+
+      {
+        n:"Egg Keema Masala",
+        p:"170",
+        v:0
+      },
+
+      {
+        n:"Omelette",
+        p:"70",
+        v:0
+      },
+
+      {
+        n:"Egg Pouch",
+        p:"40",
+        v:0
+      },
+
+      {
+        n:"Egg Bhurji",
+        p:"110",
+        v:0
+      }
+
+    ]
+  },
+
+
+  /* ================= BIRYANI ================= */
+
+  {
+    cat:"Biryani",
+
+    items:[
+
+      {
+        n:"Hyderabadi Chicken Dum Biryani",
+        p:"160",
+        v:0
+      },
+
+      {
+        n:"Andhra Style Fried Chicken Biryani",
+        p:"180",
+        v:0
+      },
+
+      {
+        n:"Pepper Chicken Fry Biryani",
+        p:"220",
+        v:0
+      },
+
+      {
+        n:"Lollipop Biryani",
+        p:"200",
+        v:0
+      },
+
+      {
+        n:"65 Boneless Biryani",
+        p:"220",
+        v:0
+      },
+
+      {
+        n:"Egg Biryani",
+        p:"130",
+        v:0
+      },
+
+      {
+        n:"Prawn Kasa Biryani",
+        p:"220",
+        v:0
+      },
+
+      {
+        n:"Mutton Kasa Biryani",
+        p:"260",
+        v:0
+      },
+
+      {
+        n:"Veg Biryani (only vegetables)",
+        p:"120",
+        v:1
+      },
+
+      {
+        n:"Paneer Biryani",
+        p:"150",
+        v:1
+      },
+
+      {
+        n:"Mushroom Biryani",
+        p:"150",
+        v:1
+      },
+
+      {
+        n:"Mix Veg Biryani (paneer, mushroom, vegetables)",
+        p:"170",
+        v:1
+      },
+
+      {
+        n:"Tawa Pulao (Salt & Pepper Special)",
+        p:"190",
+        v:1
+      },
+
+      {
+        n:"Extra Biryani Rice",
+        p:"30/60",
+        v:1
+      }
+
+    ]
+  },
+
+
+  /* ================= FRIED RICE & NOODLES ================= */
+
+  {
+    cat:"Fried Rice & Noodles",
+
+    items:[
+
+      {
+        n:"Veg Fried Rice",
+        p:"110",
+        v:1
+      },
+
+      {
+        n:"Paneer Fried Rice",
+        p:"150",
+        v:1
+      },
+
+      {
+        n:"Mushroom Fried Rice",
+        p:"150",
+        v:1
+      },
+
+      {
+        n:"Mix Veg Fried Rice",
+        p:"180",
+        v:1
+      },
+
+      {
+        n:"Triple Schezwan Rice (veg manchurian + rice)",
+        p:"250",
+        v:1
+      },
+
+      {
+        n:"Egg Fried Rice",
+        p:"120",
+        v:0
+      },
+
+      {
+        n:"Egg Chicken Fried Rice",
+        p:"160",
+        v:0
+      },
+
+      {
+        n:"Chicken Fried Rice",
+        p:"150",
+        v:0
+      },
+
+      {
+        n:"Mix Non-Veg Fried Rice",
+        p:"220",
+        v:0
+      },
+
+      {
+        n:"Prawn Fried Rice",
+        p:"220",
+        v:0
+      },
+
+      {
+        n:"NV Triple Rice (chicken manchurian + rice)",
+        p:"350",
+        v:0
+      },
+
+      {
+        n:"Street Masala Rice (Veg)",
+        p:"160",
+        v:1
+      },
+
+      {
+        n:"Street NV Rice (Non-Veg)",
+        p:"170",
+        v:0
+      },
+
+      {
+        n:"Extra Egg Pouch",
+        p:"30",
+        v:0
+      },
+
+      {
+        n:"Paneer Noodles",
+        p:"160",
+        v:1
+      },
+
+      {
+        n:"Mushroom Noodles",
+        p:"160",
+        v:1
+      },
+
+      {
+        n:"Mix Veg Noodles",
+        p:"200",
+        v:1
+      },
+
+      {
+        n:"Egg Noodles",
+        p:"120",
+        v:0
+      },
+
+      {
+        n:"Chicken Noodles",
+        p:"170",
+        v:0
+      },
+
+      {
+        n:"Egg Chicken Noodles",
+        p:"180",
+        v:0
+      },
+
+      {
+        n:"Mix Non-Veg Noodles",
+        p:"220",
+        v:0
+      },
+
+      {
+        n:"— Extra Schezwan: ₹20 —",
+        p:"",
+        v:1
+      }
+
+    ]
+  },
+
+
+  /* ================= RICE, DAL & BREAD ================= */
+
+  {
+    cat:"Rice, Dal & Bread",
+
+    items:[
+
+      {
+        n:"Steamed Rice (Full/Half)",
+        p:"80/50",
+        v:1
+      },
+
+      {
+        n:"Jeera Rice",
+        p:"120",
+        v:1
+      },
+
+      {
+        n:"Ghee Rice",
+        p:"130",
+        v:1
+      },
+
+      {
+        n:"Lemon Rice",
+        p:"140",
+        v:1
+      },
+
+      {
+        n:"Curd Rice",
+        p:"150",
+        v:1
+      },
+
+      {
+        n:"Peas Pulao",
+        p:"140",
+        v:1
+      },
+
+      {
+        n:"Dal Khichdi",
+        p:"150",
+        v:1
+      },
+
+      {
+        n:"Biryani Rice",
+        p:"120",
+        v:1
+      },
+
+      {
+        n:"Dal Fry",
+        p:"120",
+        v:1
+      },
+
+      {
+        n:"Dal Tadka",
+        p:"130",
+        v:1
+      },
+
+      {
+        n:"Egg Dal Tadka",
+        p:"150",
+        v:0
+      },
+
+      {
+        n:"Veg Tadka (Mix Dal)",
+        p:"120",
+        v:1
+      },
+
+      {
+        n:"Paneer Tadka",
+        p:"150",
+        v:1
+      },
+
+      {
+        n:"Chicken Tadka",
+        p:"180",
+        v:0
+      },
+
+      {
+        n:"Egg Tadka",
+        p:"140",
+        v:0
+      },
+
+      {
+        n:"Egg Chicken Tadka",
+        p:"200",
+        v:0
+      },
+
+      {
+        n:"Mutton Tadka",
+        p:"400",
+        v:0
+      },
+
+      {
+        n:"Tawa Roti",
+        p:"10",
+        v:1
+      },
+
+      {
+        n:"Butter Roti",
+        p:"15",
+        v:1
+      },
+
+      {
+        n:"Ghee Roti",
+        p:"20",
+        v:1
+      },
+
+      {
+        n:"Laccha Paratha",
+        p:"40",
+        v:1
+      },
+
+      {
+        n:"Egg Paratha",
+        p:"60",
+        v:0
+      }
+
+    ]
+  },
+
+
+  /* ================= SIDES ================= */
+
+  {
+    cat:"Sides",
+
+    items:[
+
+      {
+        n:"Papad (Roasted)",
+        p:"20",
+        v:1
+      },
+
+      {
+        n:"Masala Papad",
+        p:"40",
+        v:1
+      },
+
+      {
+        n:"Green Salad",
+        p:"60",
+        v:1
+      },
+
+      {
+        n:"Bundi Raita",
+        p:"100",
+        v:1
+      },
+
+      {
+        n:"Mix Raita",
+        p:"80",
+        v:1
+      },
+
+      {
+        n:"Curd (300ml)",
+        p:"40",
+        v:1
+      }
+
+    ]
+  },
+
+
+  /* ================= DRINKS ================= */
+
+  {
+    cat:"Drinks & Mojitos",
+
+    items:[
+
+      {
+        n:"Fresh Lime Soda",
+        p:"90",
+        v:1
+      },
+
+      {
+        n:"Virgin Mojito",
+        p:"100",
+        v:1
+      },
+
+      {
+        n:"Blue Lagoon",
+        p:"100",
+        v:1
+      },
+
+      {
+        n:"Masala Soda",
+        p:"80",
+        v:1
+      },
+
+      {
+        n:"Masala Cold Drink",
+        p:"80",
+        v:1
+      },
+
+      {
+        n:"Watermelon Punch",
+        p:"100",
+        v:1
+      },
+
+      {
+        n:"Spicy Chilli Guava",
+        p:"110",
+        v:1
+      },
+
+      {
+        n:"Green Apple Mojito",
+        p:"110",
+        v:1
+      }
+
+    ]
+  }
+
+];
+
+
+/* =====================================================
+   HTML ELEMENTS
+===================================================== */
+
+const main = document.getElementById('main');
+
+const tabsEl = document.getElementById('tabs');
+
+
+/* =====================================================
+   CREATE URL-FRIENDLY SLUG
+===================================================== */
+
+function slug(s){
+
+  return s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g,'-');
+
+}
+
+
+/* =====================================================
+   CREATE MENU SECTIONS
+===================================================== */
+
+MENU.forEach(section => {
+
+  const id = slug(section.cat);
+
+
+  /* ---------- CREATE CATEGORY BUTTON ---------- */
+
+  const btn = document.createElement('button');
+
+  btn.textContent = section.cat;
+
+  btn.onclick = () => {
+
+    document
+      .getElementById(id)
+      .scrollIntoView({
+        behavior:'smooth',
+        block:'start'
+      });
+
+  };
+
+  tabsEl.appendChild(btn);
+
+
+  /* ---------- CREATE SECTION ---------- */
+
+  const sec = document.createElement('section');
+
+  sec.className = 'section';
+
+  sec.id = id;
+
+
+  /* ---------- SECTION TITLE ---------- */
+
+  sec.innerHTML = `
+    <h2>
+      ${section.cat}
+
+      <small>
+        ${section.items.filter(i => i.p).length} items
+      </small>
+
+    </h2>
+  `;
+
+
+  /* ---------- CREATE ITEMS ---------- */
+
+  section.items.forEach(it => {
+
+    const row = document.createElement('div');
+
+    row.className = 'item';
+
+
+    /* Search text */
+
+    row.dataset.name = it.n.toLowerCase();
+
+
+    /* Veg / Non-Veg indicator */
+
+    const dot = it.p
+      ? `<span class="${it.v ? 'veg-dot' : 'nonveg-dot'}"></span>`
+      : '';
+
+
+    /* Menu item HTML */
+
+    row.innerHTML = `
+
+      <span class="name">
+        ${dot}
+        ${it.n}
+      </span>
+
+      ${
+        it.p
+          ? `<span class="price">₹${it.p}</span>`
+          : ''
+      }
+
+    `;
+
+
+    sec.appendChild(row);
+
+  });
+
+
+  /* ---------- ADD SECTION TO PAGE ---------- */
+
+  main.appendChild(sec);
+
+});
+
+
+/* =====================================================
+   SEARCH / FILTER
+===================================================== */
+
+function filterItems(){
+
+  const q =
+    document
+      .getElementById('search')
+      .value
+      .trim()
+      .toLowerCase();
+
+
+  let anyVisible = {};
+
+
+  /* ---------- FILTER ITEMS ---------- */
+
+  document
+    .querySelectorAll('.item')
+    .forEach(row => {
+
+      const match =
+        !q ||
+        row.dataset.name.includes(q);
+
+
+      row.classList.toggle(
+        'hidden',
+        !match
+      );
+
+    });
+
+
+  /* ---------- HIDE EMPTY SECTIONS ---------- */
+
+  document
+    .querySelectorAll('.section')
+    .forEach(sec => {
+
+      const visibleItems =
+        sec.querySelectorAll(
+          '.item:not(.hidden)'
+        );
+
+
+      sec.classList.toggle(
+        'hidden',
+        q && visibleItems.length === 0
+      );
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
